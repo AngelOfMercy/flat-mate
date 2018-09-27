@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const oauth = require('oauth');
 //const generatePassword = require('password-generator');
 
 const app = express();
@@ -20,6 +21,18 @@ app.get('/api/passwords', (req, res) => {
   res.json(passwords);
 
   console.log(`Sent ${count} passwords`);
+});
+
+app.get('/api/trademe', (req, res)=>{
+    var oa = new oauth(
+        'request token',
+        'access token',
+        process.env.TRADEME_CLIENT_ID,
+        process.env.TRADME_CLIENT_SECRET,
+        '1.0',
+        process.env.TRADEME_CALLBACK_URL,
+        'HMAC-SHA1'
+    );
 });
 
 // The "catchall" handler: for any request that doesn't
