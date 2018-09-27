@@ -1,7 +1,18 @@
 const express = require('express');
+const crypto = require('crypto');
+const request = require('request');
 const path = require('path');
-const oauth = require('oauth');
-//const generatePassword = require('password-generator');
+const oauth = require('oauth-1.0a')({
+    consumer: {
+      key: process.env.TRADEME_CLIENT_KEY,
+      secret: process.env.TRADEME_CLIENT_SECRET
+    },
+    signature_method: 'HMAC-SHA1',
+    hash_function(base_string, key) {
+      return crypto.createHmac('sha1', key).update(base_string).digest('base64');
+    }
+  });
+require('dotenv').config();
 
 const app = express();
 
@@ -24,15 +35,29 @@ app.get('/api/passwords', (req, res) => {
 });
 
 app.get('/api/trademe', (req, res)=>{
-    var oa = new oauth(
-        'request token',
-        'access token',
-        process.env.TRADEME_CLIENT_ID,
-        process.env.TRADME_CLIENT_SECRET,
-        '1.0',
-        process.env.TRADEME_CALLBACK_URL,
-        'HMAC-SHA1'
-    );
+
+    var request = {
+        url: process.env.TRADEME_URI + 'Search/Property/Rental.json',
+        method: 'GET',
+        data: ''
+    }
+
+    const token = {
+        key: process.env.TRADEME_CLIENT_KEY,
+        secret: process.env.TRADEME_CLIENT_SECRET
+      };
+
+    request({
+        url: request.url,
+        method: request.method,
+        form: oauth.authorize(request, token)
+      }, function(error, response, body) {
+          if(error) console.error(error);
+            console.log(response);
+            console.log(body);
+            res.json(body);
+      });
+    
 });
 
 // The "catchall" handler: for any request that doesn't
