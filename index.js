@@ -52,6 +52,11 @@ app.get('/api/trademe', (req, res)=>{
     //   res.json(data);
     // });
 
+    const token = {
+      key: process.env.TRADEME_TOKEN,
+      secret: process.env.TRADEME_SECRET
+    };
+
     var request_data = {
         url: process.env.TRADEME_URI + '/Search/Property/Rental.json',
         method: 'GET',
@@ -59,10 +64,7 @@ app.get('/api/trademe', (req, res)=>{
         headers: oauth.toHeader(oauth.authorize(request_data, token))
     }
 
-    const token = {
-        key: process.env.TRADEME_TOKEN,
-        secret: process.env.TRADEME_SECRET
-      };
+    
 
     request({
         url: request_data.url,
