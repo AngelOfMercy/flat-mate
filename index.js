@@ -56,7 +56,7 @@ app.get('/api/trademe', (req, res)=>{
         url: process.env.TRADEME_URI + '/Search/Property/Rental.json',
         method: 'GET',
         data: '',
-        //headers: oauth.toHeader(oauth.authorize(request_data, token))
+        headers: oauth.toHeader(oauth.authorize(request_data, token))
     }
 
     const token = {
