@@ -43,8 +43,11 @@ app.get('/api/trademe', (req, res)=>{
       secret: process.env.TRADEME_SECRET
     });
 
-    trademe.get(process.env.TRADEME_URI + '/Search/Property/Rental.json', function(err, res, data){
-      console.log(data);
+    trademe.get(process.env.TRADEME_URI + '/Search/Property/Rental.json', function(err, response, data){
+      if(err) console.error(error);
+
+      console.log('Code:', response.code) 
+
       res.json(data);
     });
 
