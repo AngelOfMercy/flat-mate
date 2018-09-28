@@ -9,6 +9,7 @@
     "express": "^4.16.3",
     "oauth": "^0.9.15",
     "oauth-1.0a": "^2.2.4",
+    "oauth-request": "^0.1.0",
     "request": "^2.88.0"
   },
   "scripts": {

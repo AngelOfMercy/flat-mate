@@ -148,6 +148,11 @@ debug@2.6.9:
   dependencies:
     ms "2.0.0"
 
+debug@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-0.8.1.tgz#20ff4d26f5e422cb68a1bacbbb61039ad8c1c130"
+  integrity sha1-IP9NJvXkIstoobrLu2EDmtjBwTA=
+
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
@@ -445,10 +450,19 @@ negotiator@0.6.1:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
   integrity sha1-KzJxhOiZIQEXeyhWP7XnECrNDKk=
 
-oauth-1.0a@^2.2.4:
+oauth-1.0a@^2.0.0, oauth-1.0a@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/oauth-1.0a/-/oauth-1.0a-2.2.4.tgz#5b0caf0de64516bd7b0f480377adba254bf24ac2"
   integrity sha512-qHqZLUIcd+mrOKYMFosi9lC0KW602BeLdJ660M3MNhT7WruzFSgJbFZE5sdN+nV55Xk/ls9k1FusaCiDItli1g==
+
+oauth-request@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/oauth-request/-/oauth-request-0.1.0.tgz#c22d25f70cd6232fab9f7c6f205381e399a16e2b"
+  integrity sha1-wi0l9wzWIy+rn3xvIFOB45mhbis=
+  dependencies:
+    debug "^0.8.1"
+    oauth-1.0a "^2.0.0"
+    request "^2.36.0"
 
 oauth-sign@~0.9.0:
   version "0.9.0"
@@ -525,7 +539,7 @@ raw-body@2.3.2:
     iconv-lite "0.4.19"
     unpipe "1.0.0"
 
-request@^2.88.0:
+request@^2.36.0, request@^2.88.0:
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   integrity sha512-NAqBSrijGLZdM0WZNsInLJpkJokL72XYjUpnB0iwsRgxh7dB6COrHnTBNwN0E+lHDAJzu7kLAkDeY08z2/A0hg==
