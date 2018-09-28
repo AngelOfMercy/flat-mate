@@ -60,7 +60,7 @@ app.get('/api/trademe', (req, res)=>{
     var request_data = {
         url: process.env.TRADEME_URI + '/Search/Property/Rental.json',
         method: 'GET',
-        data: ''        
+        data: 'Content-Type: \'application/json\''           
     }
 
     
@@ -69,7 +69,7 @@ app.get('/api/trademe', (req, res)=>{
         url: request_data.url,
         method: request_data.method,
         form: oauth.authorize(request_data, token),
-        headers: oauth.toHeader(oauth.authorize(request_data, token))
+        headers: Object.assign(oauth.toHeader(oauth.authorize(request_data, token)), {'content-type': 'application/json'})
       }, function(error, response, body) {
           if(error) console.error(error);
           //console.log(response);
