@@ -2,7 +2,7 @@ const express = require('express');
 const crypto = require('crypto');
 //const request = require('request');
 const path = require('path');
-var OAuth = require('oauth-request');
+var OAuth = require('oauth-1.0a');
 require('dotenv').config();
 
 const app = express();
@@ -27,7 +27,7 @@ app.get('/api/passwords', (req, res) => {
 
 app.get('/api/trademe', (req, res)=>{
 
-    const trademe = OAuth({
+    const oauth = OAuth({
       consumer: {
         key: process.env.TRADEME_CLIENT_KEY,
         secret: process.env.TRADEME_CLIENT_SECRET
@@ -38,39 +38,40 @@ app.get('/api/trademe', (req, res)=>{
       }
     });
 
-    trademe.setToken({
-      key: process.env.TRADEME_TOKEN,
-      secret: process.env.TRADEME_SECRET
-    });
+    // trademe.setToken({
+    //   key: process.env.TRADEME_TOKEN,
+    //   secret: process.env.TRADEME_SECRET
+    // });
 
-    trademe.get(process.env.TRADEME_URI + '/Search/Property/Rental.json', function(err, response, data){
-      if(err) console.error(error);
+    // trademe.get(process.env.TRADEME_URI + '/Search/Property/Rental.json', function(err, response, data){
+    //   if(err) console.error(error);
 
-      console.log('Code:', response.code) 
+    //   console.log('Code:', response) 
 
-      res.json(data);
-    });
+    //   res.json(data);
+    // });
 
-    // var request_data = {
-    //     url: process.env.TRADEME_URI + '/Search/Property/Rental.json',
-    //     method: 'GET',
-    //     data: '',
-    //     headers: oauth.toHeader(oauth.authorize(request_data, token))
-    // }
+    var request_data = {
+        url: process.env.TRADEME_URI + '/Search/Property/Rental.json',
+        method: 'GET',
+        data: '',
+        //headers: oauth.toHeader(oauth.authorize(request_data, token))
+    }
 
-    // const token = {
-    //     key: process.env.TRADEME_TOKEN,
-    //     secret: process.env.TRADEME_SECRET
-    //   };
+    const token = {
+        key: process.env.TRADEME_TOKEN,
+        secret: process.env.TRADEME_SECRET
+      };
 
-    // request({
-    //     url: request_data.url,
-    //     method: request_data.method,
-    //     form: oauth.authorize(request_data, token)
-    //   }, function(error, response, body) {
-    //       if(error) console.error(error);
-    //         res.json(body);
-    //   });
+    request({
+        url: request_data.url,
+        method: request_data.method,
+        form: oauth.authorize(request_data, token)
+      }, function(error, response, body) {
+          if(error) console.error(error);
+          //console.log(response);
+          res.json(body);
+      });
     
 });
 
