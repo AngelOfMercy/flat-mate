@@ -1,17 +1,8 @@
 const express = require('express');
 const crypto = require('crypto');
-const request = require('request');
+//const request = require('request');
 const path = require('path');
-const oauth = require('oauth-1.0a')({
-    consumer: {
-      key: process.env.TRADEME_CLIENT_KEY,
-      secret: process.env.TRADEME_CLIENT_SECRET
-    },
-    signature_method: 'HMAC-SHA1',
-    hash_function(base_string, key) {
-      return crypto.createHmac('sha1', key).update(base_string).digest('base64');
-    }
-  });
+var OAuth = require('oauth-request');
 require('dotenv').config();
 
 const app = express();
@@ -36,25 +27,47 @@ app.get('/api/passwords', (req, res) => {
 
 app.get('/api/trademe', (req, res)=>{
 
-    var request_data = {
-        url: process.env.TRADEME_URI + '/Search/Property/Rental.json',
-        method: 'GET',
-        data: ''
-    }
+    const trademe = OAuth({
+      consumer: {
+        key: process.env.TRADEME_CLIENT_KEY,
+        secret: process.env.TRADEME_CLIENT_SECRET
+      },
+      signature_method: 'HMAC-SHA1',
+      hash_function(base_string, key) {
+        return crypto.createHmac('sha1', key).update(base_string).digest('base64');
+      }
+    });
 
-    const token = {
-        key: process.env.TRADEME_TOKEN,
-        secret: process.env.TRADEME_SECRET
-      };
+    trademe.setToken({
+      key: process.env.TRADEME_TOKEN,
+      secret: process.env.TRADEME_SECRET
+    });
 
-    request({
-        url: request_data.url,
-        method: request_data.method,
-        form: oauth.authorize(request_data, token)
-      }, function(error, response, body) {
-          if(error) console.error(error);
-            res.json(body);
-      });
+    trademe.get(process.env.TRADEME_URI + '/Search/Property/Rental.json', function(err, res, data){
+      console.log(data);
+      res.json(data);
+    });
+
+    // var request_data = {
+    //     url: process.env.TRADEME_URI + '/Search/Property/Rental.json',
+    //     method: 'GET',
+    //     data: '',
+    //     headers: oauth.toHeader(oauth.authorize(request_data, token))
+    // }
+
+    // const token = {
+    //     key: process.env.TRADEME_TOKEN,
+    //     secret: process.env.TRADEME_SECRET
+    //   };
+
+    // request({
+    //     url: request_data.url,
+    //     method: request_data.method,
+    //     form: oauth.authorize(request_data, token)
+    //   }, function(error, response, body) {
+    //       if(error) console.error(error);
+    //         res.json(body);
+    //   });
     
 });
 
