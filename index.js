@@ -36,7 +36,7 @@ app.get('/api/passwords', (req, res) => {
 
 app.get('/api/trademe', (req, res)=>{
 
-    var request = {
+    var request_data = {
         url: process.env.TRADEME_URI + 'Search/Property/Rental.json',
         method: 'GET',
         data: ''
@@ -48,9 +48,9 @@ app.get('/api/trademe', (req, res)=>{
       };
 
     request({
-        url: request.url,
-        method: request.method,
-        form: oauth.authorize(request, token)
+        url: request_data.url,
+        method: request_data.method,
+        form: oauth.authorize(request_data, token)
       }, function(error, response, body) {
           if(error) console.error(error);
             console.log(response);
