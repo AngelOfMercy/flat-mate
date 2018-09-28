@@ -43,8 +43,8 @@ app.get('/api/trademe', (req, res)=>{
     }
 
     const token = {
-        key: process.env.TRADEME_CLIENT_KEY,
-        secret: process.env.TRADEME_CLIENT_SECRET
+        key: process.env.TRADEME_TOKEN,
+        secret: process.env.TRADEME_SECRET
       };
 
     request({
