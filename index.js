@@ -28,7 +28,6 @@ app.get('/api/trademe/flatmate-placeholder', (req, res)=>{
 
 
     var data = test.shortflat;
-
     var output = []
 
     for (var flat in data.List){
@@ -43,7 +42,7 @@ app.get('/api/trademe/flatmate-placeholder', (req, res)=>{
       
     } 
     
-    res.json(output);
+    res.json({flats: output});
     
 });
 
