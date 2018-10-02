@@ -8,7 +8,7 @@ class Flat extends Component {
 
 	render(){
 		return(<div>
-			Title: {this.props.flat.Title}
+			Title: {this.props.Title}
 		</div>
 		)
 	}
