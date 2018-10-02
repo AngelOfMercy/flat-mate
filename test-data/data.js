@@ -10,31 +10,46 @@ module.exports = {
 				ListingID:1,
 				Title: "A",
 				StartPrice: 570,
-				BedRooms: 3
+				BedRooms: 3,
+				"PhotoUrls": [
+					"https://cataas.com/cat?type=medium"
+				  ]
 			},
 			{
 				ListingID:2,
 				Title: "B",
 				StartPrice: 340,
-				BedRooms: 1
+				BedRooms: 1,
+				"PhotoUrls": [
+					"https://cataas.com/cat?type=medium"
+				  ]
 			},
 			{
 				ListingID:3,
 				Title: "C",
 				StartPrice: 1500,
-				BedRooms: 6
+				BedRooms: 6,
+				"PhotoUrls": [
+					"https://cataas.com/cat?type=medium"
+				  ]
 			},
 			{
 				ListingID:4,
 				Title: "D",
 				StartPrice: 570,
-				BedRooms: 2
+				BedRooms: 2,
+				"PhotoUrls": [
+					"https://cataas.com/cat?type=medium"
+				  ]
 			},
 			{
 				ListingID:5,
 				Title: "E",
 				StartPrice: 760,
-				BedRooms: 4
+				BedRooms: 4,
+				"PhotoUrls": [
+					"https://cataas.com/cat?type=medium"
+				  ]
 			}
 		]
 	},
