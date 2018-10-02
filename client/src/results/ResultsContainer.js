@@ -5,7 +5,7 @@ class ResultContainer extends Component {
 	componentWillMount(){
 		console.log("Flat?", this.props);
 		this.setState({
-			flats=this.props.flats
+			flats:this.props.flats
 		})
 	}
 
