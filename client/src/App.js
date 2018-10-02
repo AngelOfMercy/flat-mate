@@ -7,6 +7,7 @@ import { throws } from 'assert';
 class App extends Component {
 
   componentWillMount(){
+    this.props.flats = [];
     fetch("/api/trademe/flatmate-placeholder")
       .then(res => {
         console.log("Res: ", res)
