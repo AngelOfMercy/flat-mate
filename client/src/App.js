@@ -33,7 +33,7 @@ class App extends Component {
         </p>
 
         <div>
-          {this.state.flats.map(flat => {
+          {this.props.flats.map(flat => {
             return (<Flat 
               key={flat.ListingID} 
               pricePerRoom={flat.pricePerRoom}
