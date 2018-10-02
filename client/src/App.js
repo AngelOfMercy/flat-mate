@@ -19,9 +19,10 @@ class App extends Component {
         res.json().then(data => {
           console.log(data);
           this.props.flats = data.flats;
-          // this.setState({
-          //   flats: data.flats
-          // })
+          this.setState({
+             flats: data.flats
+          })
+          console.log("State", this.state);
         });
       });
   }
@@ -33,11 +34,12 @@ class App extends Component {
       </div>)
     }
     else{
-      console.log(this.props.flats);
+      console.log("Props",this.props.flats);
+      console.log("State", this.state);
       return (
         <div>
           Flat List:
-          {this.props.flats.map(flat => {
+          {this.state.flats.map(flat => {
             return (<Flat 
               key={flat.ListingID}
               pricePerRoom={flat.pricePerRoom}
