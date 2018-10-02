@@ -38,7 +38,11 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <ResultContainer key={this.props.flats} flats={this.props.flats}>
+        <div class="App-Search" md={3}>
+        
+        </div>
+
+        <ResultContainer key={this.props.flats} flats={this.props.flats} md={9}>
 
         </ResultContainer>
 
