@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Flat from './results/Flat.js';
+
 import { throws } from 'assert';
 import ResultContainer from './results/ResultsContainer';
 

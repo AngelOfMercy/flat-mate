@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Flat from './results/Flat.js';
 
 class ResultContainer extends Component {
 
