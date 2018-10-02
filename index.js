@@ -31,15 +31,15 @@ app.get('/api/trademe/flatmate-placeholder', (req, res)=>{
     var output = []
 
     for (var flat in data.List){
-
+      console.log(flat);
       if(flat.Bedrooms && flat.StartPrice){
         var pricePerRoom = flat.StartPrice/flat.Bedrooms;
-        if(pricePerRoom > 100 && pricePerRoom < 200){
+        console.log(pricePerRoom);
+        if(pricePerRoom < 200){
           flat.pricePerRoom = pricePerRoom;
           output.push(flat);
         }
       }
-      
     } 
     
     res.json({flats: output});
