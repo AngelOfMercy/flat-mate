@@ -12,7 +12,7 @@ class App extends Component {
         console.log("Res: ", res)
         res.json().then(data => {
           console.log("data: ", data);
-          this.props.flats = data;
+          this.props.flats = data.flats;
         });
       })
   }
