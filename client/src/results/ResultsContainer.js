@@ -6,12 +6,12 @@ class ResultContainer extends Component {
 	componentWillMount(){
 		console.log("Flat?", this.props);
 		this.setState({
-			flats:this.props.flats
+			flats:this.props.flats || []
 		})
 	}
 
 	renderFlats(){
-		if(!this.props.flats){
+		if(!this.props.flats && !this.state.flats){
 		  return (<div>
 			Loading Flats.
 		  </div>)
