@@ -12,7 +12,7 @@ class App extends Component {
         console.log("Res: ", res)
         res.json().then(data => {
           console.log("data: ", data);
-          this.state.flats = data;
+          this.props.flats = data;
         });
       })
   }
@@ -29,7 +29,7 @@ class App extends Component {
         </p>
 
         <Flat>
-          {this.state.flats}
+          {this.props.flats}
         </Flat>
         
 
