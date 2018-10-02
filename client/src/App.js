@@ -8,14 +8,14 @@ class App extends Component {
 
   componentWillMount(){
     this.setState({
-      flats = [],
+      flats = []
     });
     fetch("/api/trademe/flatmate-placeholder")
-    .then(res => {
-      res.json().then(data => {
-        this.props.flats = data.flats;
+      .then(res => {
+        res.json().then(data => {
+          this.props.flats = data.flats;
+        });
       });
-    });
   }
 
   componentDidMount(){
