@@ -10,10 +10,17 @@ class App extends Component {
     this.setState({
       flats: []
     });
+  }
+
+  componentDidMount(){
+    console.log("Did mount");
     fetch("/api/trademe/flatmate-placeholder")
       .then(res => {
         res.json().then(data => {
           this.props.flats = data.flats;
+          this.setState({
+            flats: data.flats
+          })
         });
       });
   }
@@ -28,7 +35,7 @@ class App extends Component {
       return (
         <div>
           Flats:
-          {this.props.flats.map(flat => {
+          {this.state.flats.map(flat => {
             return (<Flat 
               key={flat.ListingID}
               pricePerRoom={flat.pricePerRoom}
@@ -52,6 +59,7 @@ class App extends Component {
         </p>
 
         {this.renderFlats()}
+
         
 
       </div>
