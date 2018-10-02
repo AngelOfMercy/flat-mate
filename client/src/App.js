@@ -7,19 +7,19 @@ import { throws } from 'assert';
 class App extends Component {
 
   componentWillMount(){
-    this.props.flats = [];
-    
+    this.setState({
+      flats = [],
+    });
     fetch("/api/trademe/flatmate-placeholder")
-      .then(res => {
-        console.log("Res: ", res)
-        res.json().then(data => {
-          console.log("data: ", data);
+    .then(res => {
+      res.json().then(data => {
+        this.props.flats = data.flats;
+      });
+    });
+  }
 
-          this.props.flats = data.flats;
-
-          console.log(this.props.flats)
-        });
-      })
+  componentDidMount(){
+   
   }
   
 
@@ -35,6 +35,7 @@ class App extends Component {
         </p>
 
         <div>
+          Flats:
           {this.props.flats.map(flat => {
             return (<Flat 
               key={flat.ListingID} 
