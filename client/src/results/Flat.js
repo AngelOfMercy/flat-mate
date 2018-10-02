@@ -7,9 +7,10 @@ class Flat extends Component {
 	}
 
 	render(){
-		<div>
+		return(<div>
 			Hi
 		</div>
+		)
 	}
 }
 
