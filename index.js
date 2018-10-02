@@ -27,9 +27,23 @@ app.get('/api/passwords', (req, res) => {
 app.get('/api/trademe/flatmate-placeholder', (req, res)=>{
 
 
-    var data = test.flatmate;
-    console.log(data);
-    res.json(data);
+    var data = test.shortflat;
+
+    var output = []
+
+    for (var flat in data.List){
+
+      if(flat.Bedrooms && flat.StartPrice){
+        var pricePerRoom = flat.StartPrice/flat.Bedrooms;
+        if(pricePerRoom > 100 && pricePerRoom < 200){
+          flat.pricePerRoom = pricePerRoom;
+          output.push(flat);
+        }
+      }
+      
+    } 
+    
+    res.json(output);
     
 });
 

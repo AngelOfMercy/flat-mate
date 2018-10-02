@@ -1,4 +1,43 @@
 module.exports = {
+
+	shortflat:{
+		"TotalCount": 5,
+		"TotalCountTruncated": false,
+		"Page": 1,
+		"PageSize": 5,
+		"List": [
+			{
+				ListingID:1,
+				Title: "A",
+				StartPrice: 570,
+				BedRooms: 3
+			},
+			{
+				ListingID:2,
+				Title: "B",
+				StartPrice: 340,
+				BedRooms: 1
+			},
+			{
+				ListingID:3,
+				Title: "C",
+				StartPrice: 1500,
+				BedRooms: 6
+			},
+			{
+				ListingID:4,
+				Title: "D",
+				StartPrice: 570,
+				BedRooms: 2
+			},
+			{
+				ListingID:5,
+				Title: "E",
+				StartPrice: 760,
+				BedRooms: 4
+			}
+		]
+	},
 	flatmate: {
 		"TotalCount": 123,
 		"TotalCountTruncated": false,
