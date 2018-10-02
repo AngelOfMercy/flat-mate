@@ -14,13 +14,15 @@ class App extends Component {
           console.log("data: ", data);
 
           this.props.flats = data.flats;
+
+          console.log(this.props.flats)
         });
       })
   }
 
   renderFlats(){
-    return this.props.flats.map((flat) => {
-      <Flat key={flat.ListingID} flat={flat}>
+    const listFlat = this.props.flats.map((flat) => {
+      <Flat ID={flat.ListingID} flat={flat}>
         {flat}
       </Flat>
     })
@@ -39,11 +41,9 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        {this.props.flats.map(function(flat){
-          return <Flat flat={flat}>
-          
-          </Flat>
-        })}
+        <Flat kay={this.props.flats[0].ListingID}>
+          {this.props.flats[0]}
+        </Flat>
         
 
       </div>
