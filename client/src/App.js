@@ -19,15 +19,6 @@ class App extends Component {
         });
       })
   }
-
-  renderFlats(){
-    const listFlat = this.props.flats.map((flat) => {
-      <Flat ID={flat.ListingID} flat={flat}>
-        {flat}
-      </Flat>
-    })
-  }
-
   
 
   render() {
@@ -41,9 +32,15 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <Flat kay={this.props.flats[0].ListingID}>
-          {this.props.flats[0]}
-        </Flat>
+        <div>
+          {this.state.flats.map(flat => {
+            return (<Flat 
+              key={flat.ListingID} 
+              pricePerRoom={flat.pricePerRoom}
+              Title={flat.Title}>
+            </Flat>);
+          })}
+        </div>
         
 
       </div>
