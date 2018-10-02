@@ -39,7 +39,11 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        {this.renderFlats()}
+        {this.props.flats.map(function(flat){
+          return <Flat flat={flat}>
+          
+          </Flat>
+        })}
         
 
       </div>
