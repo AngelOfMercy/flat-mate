@@ -30,18 +30,18 @@ app.get('/api/trademe/flatmate-placeholder', (req, res)=>{
     var data = test.shortflat;
     var output = []
 
-    for (var index in data.List){
-      var flat = data.List[index];
-      console.log(flat);
-      if(flat.BedRooms && flat.StartPrice){
-        var pricePerRoom = flat.StartPrice/flat.BedRooms;
-        console.log(pricePerRoom);
-        if(pricePerRoom < 200){
-          flat.pricePerRoom = pricePerRoom;
-          output.push(flat);
-        }
-      }
-    } 
+    // for (var index in data.List){
+    //   var flat = data.List[index];
+    //   console.log(flat);
+    //   if(flat.BedRooms && flat.StartPrice){
+    //     var pricePerRoom = flat.StartPrice/flat.BedRooms;
+    //     console.log(pricePerRoom);
+    //     if(pricePerRoom < 200){
+    //       flat.pricePerRoom = pricePerRoom;
+    //       output.push(flat);
+    //     }
+    //   }
+    // } 
     
     res.json({flats: output});
     
