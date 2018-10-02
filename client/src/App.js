@@ -16,13 +16,12 @@ class App extends Component {
     console.log("Did mount");
     fetch("/api/trademe/flatmate-placeholder")
       .then(res => {
-        console.log(res);
         res.json().then(data => {
           console.log(data);
           this.props.flats = data.flats;
-          this.setState({
-            flats: data.flats
-          })
+          // this.setState({
+          //   flats: data.flats
+          // })
         });
       });
   }
@@ -34,10 +33,11 @@ class App extends Component {
       </div>)
     }
     else{
+      console.log(this.props.flats);
       return (
         <div>
           Flat List:
-          {this.state.flats.map(flat => {
+          {this.props.flats.map(flat => {
             return (<Flat 
               key={flat.ListingID}
               pricePerRoom={flat.pricePerRoom}
