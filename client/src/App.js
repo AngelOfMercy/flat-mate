@@ -39,12 +39,12 @@ class App extends Component {
         </p>
         <Grid>
           <Row>
-            <Col xs={12} md={3}>
+            <Col md={3}>
               <div class="App-Search">
                 This is where the search will go
               </div>
             </Col>
-            <Col xs={12} md={9}>
+            <Col md={9}>
               <Well>
                 <ResultContainer key={this.props.flats} flats={this.props.flats} >
 
