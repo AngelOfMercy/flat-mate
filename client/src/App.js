@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Flat from './results/Flat.js';
 import { throws } from 'assert';
+import ResultContainer from './results/ResultsContainer';
 
 class App extends Component {
 
@@ -27,30 +28,6 @@ class App extends Component {
       });
   }
 
-  renderFlats(){
-    if(!this.props.flats){
-      return (<div>
-        Loading Flats.
-      </div>)
-    }
-    else{
-      console.log("Props",this.props.flats);
-      console.log("State", this.state);
-      return (
-        <div>
-          Flat List:
-          {this.state.flats.map(flat => {
-            return (<Flat 
-              key={flat.ListingID}
-              pricePerRoom={flat.pricePerRoom}
-              Title={flat.Title}>
-            </Flat>);
-          })}
-        </div>
-      )
-    }
-  }
-
   render() {
     return (
       <div className="App">
@@ -62,7 +39,9 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        {this.renderFlats()}
+        <ResultContainer flats={this.props.flats}>
+
+        </ResultContainer>
 
         
 
