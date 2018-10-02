@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
 import { throws } from 'assert';
@@ -37,14 +38,23 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Container>
+          <Row>
+            <Col>
+              <div class="App-Search" sm={12} md={3}>
+                This is where the search will go
+              </div>
+            </Col>
+            <Col>
+              <ResultContainer key={this.props.flats} flats={this.props.flats} sm={12} md={9}>
 
-        <div class="App-Search" sm={12} md={3}>
-          This is where the search will go
-        </div>
+              </ResultContainer>
+            </Col>
+          </Row>
+        </Container>
+        
 
-        <ResultContainer key={this.props.flats} flats={this.props.flats} sm={12} md={9}>
-
-        </ResultContainer>
+        
 
         
 
