@@ -28,7 +28,7 @@ app.get('/api/trademe/flatmate-placeholder', (req, res)=>{
 
 
     var data = test.flatmate;
-
+    console.log(data);
     res.json(data);
     
 });
