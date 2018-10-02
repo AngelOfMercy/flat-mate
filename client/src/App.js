@@ -18,10 +18,27 @@ class App extends Component {
       });
   }
 
-  componentDidMount(){
-   
+  renderFlats(){
+    if(!this.props.flats){
+      return (<div>
+        Loading Flats.
+      </div>)
+    }
+    else{
+      return (
+        <div>
+          Flats:
+          {this.props.flats.map(flat => {
+            return (<Flat 
+              key={flat.ListingID}
+              pricePerRoom={flat.pricePerRoom}
+              Title={flat.Title}>
+            </Flat>);
+          })}
+        </div>
+      )
+    }
   }
-  
 
   render() {
     return (
@@ -34,16 +51,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <div>
-          Flats:
-          {this.props.flats.map(flat => {
-            return (<Flat 
-              key={flat.ListingID} 
-              pricePerRoom={flat.pricePerRoom}
-              Title={flat.Title}>
-            </Flat>);
-          })}
-        </div>
+        {this.renderFlats()}
         
 
       </div>
