@@ -12,10 +12,21 @@ class App extends Component {
         console.log("Res: ", res)
         res.json().then(data => {
           console.log("data: ", data);
+
           this.props.flats = data.flats;
         });
       })
   }
+
+  renderFlats(){
+    return this.props.flats.map((flat) => {
+      <Flat key={flat.ListingID} flat={flat}>
+        {flat}
+      </Flat>
+    })
+  }
+
+  
 
   render() {
     return (
@@ -28,9 +39,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <Flat>
-          {this.props.flats}
-        </Flat>
+        {renderFlats()}
         
 
       </div>
