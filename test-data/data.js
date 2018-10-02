@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
 	flatmate: {
 		"TotalCount": 123,
 		"TotalCountTruncated": false,
