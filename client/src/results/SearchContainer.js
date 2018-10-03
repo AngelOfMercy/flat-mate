@@ -20,13 +20,13 @@ class Flat extends Component {
 		return(<div>
 			Seach Form:
 			<Form>
-				<Form.Group>
 					<Form.Control type="text" placeholder="Title" value={this.props.title} onChange={console.log("Form", this.props)}/>
-				</Form.Group>
+					
 			</Form>
 			<Button bsStyle="primary" /*onClick={this.props.search(this.filterResults)} */>
-				Search
-			</Button>
+						Search
+					</Button>
+			
 		</div>
 		)
 	}
