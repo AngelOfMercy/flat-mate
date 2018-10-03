@@ -17,7 +17,7 @@ class Flat extends Component {
 
 		data.forEach(flat => {
 			console.log(flat.Title)
-			if(flat.Title.match(new RegExp(this.props.Title, i))){
+			if(flat.Title.match(new RegExp(this.props.Title, "i"))){
 				console.log(true);
 				output.push(flat);
 			}
