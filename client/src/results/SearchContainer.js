@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import Form from 'react-bootstrap/lib/Form';
-import { Button, FormControl } from 'react-bootstrap';
+import { Button, FormControl, FormGroup, PageHeader } from 'react-bootstrap';
+import './SearchContainer.css';
 
 class Flat extends Component {
 
@@ -44,17 +45,24 @@ class Flat extends Component {
 	}
 
 	render(){
-		return(<div>
+		return(
+		<div className="SearchContainer">
 			<form>
-				<FormControl type="text" 
-					placeholder="Title" 
-					value={this.state.title} 
-					onChange={this.handleChange}
-				/>
+				<p className="SearchTitle">
+					Search:
+				</p>
 				
+				<FormGroup>
+					<FormControl type="text" 
+						placeholder="Key Word Search" 
+						value={this.state.title} 
+						onChange={this.handleChange}
+					/>
+				</FormGroup>
 				<Button bsStyle="primary" onClick={this.props.search(this.filterResults)} >
-					Search
+						Search
 				</Button>
+				
 			</form>
 			
 			

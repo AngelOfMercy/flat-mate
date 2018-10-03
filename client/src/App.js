@@ -42,9 +42,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <PageHeader>
+
             _Mate
-          </PageHeader>
+
         </div>
 
         <Grid className="show-grid">

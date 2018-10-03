@@ -1,0 +1,9 @@
+.SearchContainer {
+	background-color: wheat;
+	padding:1em;
+	border-radius: 2%;
+}
+
+.SearchTitle {
+	font-size: 1.3em;
+}
