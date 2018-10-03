@@ -28,10 +28,14 @@ class App extends Component {
   }
 
   search(filter){
-    this.setState({
-      flats: filter(this.props.flats)
-    });
     console.log("triggered search");
+
+    if(this.state.flats){
+      this.setState({
+        flats: filter(this.props.flats)
+      });
+    }
+    
   }
 
   render() {
