@@ -27,6 +27,13 @@ class App extends Component {
       });
   }
 
+  search(filter){
+
+    this.setState({
+      flats: filter(this.props.flats)
+    })
+  }
+
   render() {
     const styles = {
       container: {
@@ -54,7 +61,7 @@ class App extends Component {
         <Grid className="show-grid">
           <Row style={styles.row}>
             <Col md={3} style={styles.left}>
-              <SearchContainer>
+              <SearchContainer search={this.search()} >
               </SearchContainer>
             </Col>
             <Col md={9} style={styles.right}>

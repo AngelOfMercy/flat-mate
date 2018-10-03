@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
 
 class Flat extends Component {
 
@@ -13,7 +14,7 @@ class Flat extends Component {
 	render(){
 		return(<div>
 			Seach Form:
-			<Button bsStyle="primary" onClick={this.props.search(filterResults)}>
+			<Button bsStyle="primary" onClick={this.props.search(this.filterResults)}>
 				Search
 			</Button>
 		</div>
