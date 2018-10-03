@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Well, Grid, Row, Col } from 'react-bootstrap';
 
 class Flat extends Component {
 
@@ -7,9 +8,20 @@ class Flat extends Component {
 	}
 
 	render(){
-		return(<div>
-			Title: {this.props.Title}
-		</div>
+		return(
+			<Well>
+				<Grid className="show-grid">
+					<Row>
+						<Col xs={3}>
+							Image Goes Here
+						</Col>
+						<Col xs={9}>
+								{this.props.Title}
+						</Col>
+					</Row>
+
+				</Grid>
+			</Well>
 		)
 	}
 }
