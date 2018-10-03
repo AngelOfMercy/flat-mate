@@ -10,7 +10,7 @@ class Flat extends Component {
 	render(){
 		return(
 			<Well bsStyle="small">
-				<Grid className="show-grid">
+				
 					<Row>
 						<Col xs={3}>
 							Image Goes Here
@@ -19,8 +19,6 @@ class Flat extends Component {
 								{this.props.Title}
 						</Col>
 					</Row>
-
-				</Grid>
 			</Well>
 		)
 	}
