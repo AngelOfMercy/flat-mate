@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Flat from './Flat.js';
 import './ResultContainer.css';
-import { Well } from 'react-bootstrap';
+import { Well, Row } from 'react-bootstrap';
 
 class ResultContainer extends Component {
 
