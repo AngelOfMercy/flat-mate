@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, PageHeader, Well, Grid, Row, Col } from 'react-bootstrap';
+import { PageHeader, Well, Grid, Row, Col } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
 import ResultContainer from './results/ResultsContainer';
@@ -28,6 +28,26 @@ class App extends Component {
   }
 
   render() {
+    const styles = {
+      container: {
+        backgroundColor: store.grey
+      },
+      left: {
+        height: store.height,
+        padding: 0,
+        margin: 0,
+        overflow: 'hidden'
+      },
+      right: {
+        overflowY: 'auto',
+        padding: 0,
+        height: store.height,
+        paddingBottom: '50px'
+      },
+      row: {
+        marginBottom: 0
+      }
+    }
     return (
       <div className="App">
         <PageHeader className="App-header">
@@ -38,13 +58,13 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Grid className="show-grid">
-          <Row>
-            <Col md={3}>
+          <Row style={styles.row}>
+            <Col md={3} style={styles.left}>
               <div class="App-Search">
                 This is where the search will go
               </div>
             </Col>
-            <Col md={9}>
+            <Col md={9} style={styles.right}>
               <Well>
                 <ResultContainer key={this.props.flats} flats={this.props.flats} >
 
@@ -54,25 +74,6 @@ class App extends Component {
             </Col>
           </Row>
         </Grid>
-
-        <Container>
-          <Row>
-            <Col>1 of 3</Col>
-            <Col xs={6}>2 of 3 (wider)</Col>
-            <Col>3 of 3</Col>
-          </Row>
-          <Row>
-            <Col>1 of 3</Col>
-            <Col xs={5}>2 of 3 (wider)</Col>
-            <Col>3 of 3</Col>
-          </Row>
-        </Container>;
-        
-
-        
-
-        
-
       </div>
     );
   }
