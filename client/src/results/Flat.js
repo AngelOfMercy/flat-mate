@@ -15,7 +15,7 @@ class Flat extends Component {
 						<Col xs={3}>
 							Image Goes Here
 						</Col>
-						<Col xs={9}>
+						<Col>
 								{this.props.Title}
 						</Col>
 					</Row>

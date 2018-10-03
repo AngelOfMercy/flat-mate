@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Flat from './Flat.js';
-import './ResultContainer.css'
+import './ResultContainer.css';
+import Well from 'react-bootstrap';
 
 class ResultContainer extends Component {
 
@@ -22,7 +23,6 @@ class ResultContainer extends Component {
 		  console.log("State", this.state);
 		  return (
 			<div>
-			  Flat List:
 			  {this.state.flats.map(flat => {
 				return (<Flat 
 				  key={flat.ListingID}
@@ -36,10 +36,10 @@ class ResultContainer extends Component {
 	  }
 
 	render(){
-		return(<div class="ResultContainer">
-			Search Results:
+		return(
+		<Well>
 			{this.renderFlats()}
-		</div>
+		</Well>
 		)
 	}
 }
