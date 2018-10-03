@@ -9,7 +9,7 @@ class Flat extends Component {
 
 	render(){
 		return(
-			<Well>
+			<Well bsStyle="small">
 				<Grid className="show-grid">
 					<Row>
 						<Col xs={3}>
