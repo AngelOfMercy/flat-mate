@@ -30,10 +30,8 @@ class App extends Component {
   render() {
     const styles = {
       container: {
-        backgroundColor: store.grey
       },
       left: {
-        height: store.height,
         padding: 0,
         margin: 0,
         overflow: 'hidden'
@@ -41,7 +39,6 @@ class App extends Component {
       right: {
         overflowY: 'auto',
         padding: 0,
-        height: store.height,
         paddingBottom: '50px'
       },
       row: {
