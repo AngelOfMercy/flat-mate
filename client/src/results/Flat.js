@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Well, Grid, Row, Col } from 'react-bootstrap';
+import { Well, Row, Col } from 'react-bootstrap';
+import './Flat.css';
 
 class Flat extends Component {
 
@@ -9,7 +10,7 @@ class Flat extends Component {
 
 	render(){
 		return(
-			<div style="width:100%;margin:10px;background-color:white;padding:5px;">
+			<div className="FlatContainer">
 				<Row>
 					<Col xs={3}>
 						Image Goes Here

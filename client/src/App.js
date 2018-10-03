@@ -51,7 +51,7 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <PageHeader>
+        <PageHeader className="App-header">
           <h1 className="App-title">_Mate</h1>
         </PageHeader>
 
