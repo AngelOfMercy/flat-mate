@@ -41,9 +41,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PageHeader className="App-header">
+        <div className="App-header">
           <h1 className="App-title">_Mate</h1>
-        </PageHeader>
+        </div>
 
         <Grid className="show-grid">
           <Row>
