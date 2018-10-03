@@ -29,6 +29,7 @@ class App extends Component {
 
   search(filter){
     //DO NOTHING ATM
+    console.log("triggered search");
   }
 
   render() {

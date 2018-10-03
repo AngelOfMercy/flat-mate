@@ -19,11 +19,11 @@ class Flat extends Component {
 	render(){
 		return(<div>
 			<form>
-				<FormControl type="text" placeholder="Title" value={this.state.search.title} />
+				<FormControl type="text" placeholder="Title" value={this.state.title} />
 				
-			<Button bsStyle="primary" /*onClick={this.props.search(this.filterResults)} */>
-						Search
-					</Button>
+				<Button bsStyle="primary" onClick={this.props.search(this.filterResults)} >
+					Search
+				</Button>
 			</form>
 			
 			
