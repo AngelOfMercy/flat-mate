@@ -6,10 +6,17 @@ import SearchContainer from './results/SearchContainer';
 
 class App extends Component {
 
+  constructor(props, context){
+		super(props, context);
+
+		this.search = this.search.bind(this);
+
+		this.state = {
+			flats: []
+		}
+	}
+
   componentWillMount(){
-    this.setState({
-      flats: []
-    });
   }
 
   componentDidMount(){
