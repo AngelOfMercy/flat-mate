@@ -9,17 +9,16 @@ class Flat extends Component {
 
 	render(){
 		return(
-			<Well bsStyle="small">
-				
-					<Row>
-						<Col xs={3}>
-							Image Goes Here
-						</Col>
-						<Col>
-								{this.props.Title}
-						</Col>
-					</Row>
-			</Well>
+			<div style="width:100%;margin:10px;background-color:white;padding:5px;">
+				<Row>
+					<Col xs={3}>
+						Image Goes Here
+					</Col>
+					<Col>
+							{this.props.Title}
+					</Col>
+				</Row>
+			</div>
 		)
 	}
 }
