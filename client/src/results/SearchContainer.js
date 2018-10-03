@@ -7,18 +7,18 @@ class Flat extends Component {
 		console.log("Mounting Search Container", this.props);
 	}
 
-	filterResults(data){
-		const temp = {
-			...data
-		};
-		
-		return temp;
-	}
+	// filterResults(data){
+	// 	const temp = {
+	// 		...data
+	// 	};
+
+	// 	return temp;
+	// }
 
 	render(){
 		return(<div>
 			Seach Form:
-			<Button bsStyle="primary" onClick={this.props.search(this.filterResults)}>
+			<Button bsStyle="primary" /*onClick={this.props.search(this.filterResults)} */>
 				Search
 			</Button>
 		</div>

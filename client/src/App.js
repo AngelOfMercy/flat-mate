@@ -27,12 +27,11 @@ class App extends Component {
       });
   }
 
-  search(filter){
-
-    this.setState({
-      flats: filter(this.props.flats)
-    })
-  }
+  // search(filter){
+  //   this.setState({
+  //     flats: filter(this.props.flats)
+  //   });
+  // }
 
   render() {
     const styles = {
@@ -60,10 +59,12 @@ class App extends Component {
 
         <Grid className="show-grid">
           <Row style={styles.row}>
+            
             <Col md={3} style={styles.left}>
-              <SearchContainer search={this.search()} >
+              <SearchContainer>
               </SearchContainer>
             </Col>
+
             <Col md={9} style={styles.right}>
               <ResultContainer key={this.props.flats} flats={this.props.flats} >
               </ResultContainer>
