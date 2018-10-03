@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PageHeader, Well, Grid, Row, Col } from 'react-bootstrap';
+import { Container, PageHeader, Well, Grid, Row, Col } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
 import ResultContainer from './results/ResultsContainer';
@@ -37,7 +37,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Grid>
+        <Grid className="show-grid">
           <Row>
             <Col md={3}>
               <div class="App-Search">
@@ -54,6 +54,19 @@ class App extends Component {
             </Col>
           </Row>
         </Grid>
+
+        <Container>
+          <Row>
+            <Col>1 of 3</Col>
+            <Col xs={6}>2 of 3 (wider)</Col>
+            <Col>3 of 3</Col>
+          </Row>
+          <Row>
+            <Col>1 of 3</Col>
+            <Col xs={5}>2 of 3 (wider)</Col>
+            <Col>3 of 3</Col>
+          </Row>
+        </Container>;
         
 
         
