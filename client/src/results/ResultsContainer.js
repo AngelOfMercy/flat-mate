@@ -5,25 +5,26 @@ import { Well, Row } from 'react-bootstrap';
 
 class ResultContainer extends Component {
 
-	componentWillMount(){
-		console.log("Flat?", this.props);
-		this.setState({
-			flats:this.props.flats || []
-		})
+	constructor(props, context){
+		super(props, context);
+
+		//this.renderFlats = this.renderFlats.bind(this);
+
+		this.state = {
+			flats: props.flats
+		}
 	}
 
 	renderFlats(){
-		if(!this.props.flats || !this.state.flats){
+		if(!this.props.flats){
 		  return (<div>
-			Loading Flats.
+			No Flats Found
 		  </div>)
 		}
 		else{
-		  console.log("Props",this.props.flats);
-		  console.log("State", this.state);
 		  return (
 			<div>
-			  {this.state.flats.map(flat => {
+			  {this.props.flats.map(flat => {
 				return (<Flat 
 				  key={flat.ListingID}
 				  pricePerRoom={flat.pricePerRoom}
@@ -34,7 +35,15 @@ class ResultContainer extends Component {
 			</div>
 		  )
 		}
-	  }
+	}
+
+	componentWillReceiveProps(nextProps){
+		console.log("New Props", nextProps);
+	}
+
+	componentDidUpdate(props){
+		console.log("Did update", props);
+	}
 
 	render(){
 		return(

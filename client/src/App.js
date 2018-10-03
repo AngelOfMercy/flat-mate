@@ -34,15 +34,28 @@ class App extends Component {
       });
   }
 
-  search(filter){
-    console.log("triggered search");
-
-    if(this.props.flats){
+  search(data){
+    if(data){
       this.setState({
-        flats: filter(this.props.flats)
-      });
+        flats: this.filteredFlats(data.target.value)
+      })
     }
-    
+  }
+
+  filteredFlats(data){
+    console.log(data);
+    var output = [];
+
+		if(!data || data.length === 0 || data === '')
+      return this.props.flats;
+
+		this.props.flats.forEach(flat => {
+			const regex = new RegExp(data, "i")
+			if(flat.Title.match(regex)){
+				output.push(flat);
+			}
+		});
+		return output;
   }
 
   render() {
@@ -58,12 +71,12 @@ class App extends Component {
           <Row>
             
             <Col md={3}>
-              <SearchContainer search={this.search}>
+              <SearchContainer search={this.search} update={this.search}>
               </SearchContainer>
             </Col>
 
             <Col md={9}>
-              <ResultContainer key={this.props.flats} flats={this.props.flats} >
+              <ResultContainer key={this.state.flats} flats={this.state.flats} >
               </ResultContainer>
             </Col>
           </Row>

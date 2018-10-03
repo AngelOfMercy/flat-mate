@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 import { Button, FormControl, FormGroup } from 'react-bootstrap';
 import './SearchContainer.css';
 
-class Flat extends Component {
+class SearchContainer extends Component {
 
 	constructor(props, context){
 		super(props, context);
 
 		this.handleChange = this.handleChange.bind(this);
-		this.filterResults = this.filterResults.bind(this);
+		//this.filterResults = this.filterResults.bind(this);
 
 		this.state = {
 			title: ''
@@ -20,29 +20,25 @@ class Flat extends Component {
 		console.log("Mounting Search Container", this.props);
 	}
 
-	filterResults(data){
+	// filterResults(data){
 
-		var output = [];
+	// 	var output = [];
 
-		if(!data || data.length === 0)
-			return output;
+	// 	if(!data || data.length === 0)
+	// 		return output;
 
-		data.forEach(flat => {
-			console.log(flat.Title)
-			if(flat.Title.match(new RegExp(this.props.Title, "i"))){
-				console.log(true);
-				output.push(flat);
-			}
-			else{
-				console.log(false);
-			}
-		});
-		console.log("Output:", output);
-		return output;
-	}
+	// 	data.forEach(flat => {
+	// 		const regex = new RegExp(this.state.title, "i")
+	// 		if(flat.Title.match(regex)){
+	// 			output.push(flat);
+	// 		}
+	// 	});
+	// 	return output;
+	// }
 
 	handleChange(e) {
 		this.setState({ title: e.target.value });
+		this.props.update(e);
 	}
 
 	render(){
@@ -72,4 +68,4 @@ class Flat extends Component {
 	}
 }
 
-export default Flat;
+export default SearchContainer;

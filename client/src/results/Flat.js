@@ -4,10 +4,6 @@ import './Flat.css';
 
 class Flat extends Component {
 
-	componentWillMount(){
-		console.log("Flat?", this.props);
-	}
-
 	pickImage(){
 		if(this.props.Images[0])
 			return this.props.Images[0];
