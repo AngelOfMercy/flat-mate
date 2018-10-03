@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import Form from 'react-bootstrap/lib/Form';
-import { Button, FormControl, FormGroup, PageHeader } from 'react-bootstrap';
+import { Button, FormControl, FormGroup } from 'react-bootstrap';
 import './SearchContainer.css';
 
 class Flat extends Component {
@@ -49,7 +49,7 @@ class Flat extends Component {
 		<div className="SearchContainer">
 			<form>
 				<p className="SearchTitle">
-					Search:
+					Find your flat!
 				</p>
 				
 				<FormGroup>

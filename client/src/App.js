@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PageHeader, Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import './App.css';
 import ResultContainer from './results/ResultsContainer';
 import SearchContainer from './results/SearchContainer';
@@ -28,13 +28,13 @@ class App extends Component {
   }
 
   search(filter){
-    // console.log("triggered search");
+    console.log("triggered search");
 
-    // if(this.props.flats){
-    //   this.setState({
-    //     flats: filter(this.props.flats)
-    //   });
-    // }
+    if(this.props.flats){
+      this.setState({
+        flats: filter(this.props.flats)
+      });
+    }
     
   }
 
