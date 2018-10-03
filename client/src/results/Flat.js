@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Thumbnail, Row, Col } from 'react-bootstrap';
+import { Thumbnail, Row, Col, Button } from 'react-bootstrap';
 import './Flat.css';
 
 class Flat extends Component {
