@@ -8,7 +8,11 @@ class Flat extends Component {
 	}
 
 	filterResults(data){
-		return data;
+		const temp = {
+			...data
+		};
+		
+		return temp;
 	}
 
 	render(){
