@@ -15,6 +15,9 @@ class Flat extends Component {
 
 		var output = [];
 
+		if(!data)
+			return output;
+
 		data.forEach(flat => {
 			console.log(flat.Title)
 			if(flat.Title.match(new RegExp(this.props.Title, "i"))){

@@ -28,13 +28,13 @@ class App extends Component {
   }
 
   search(filter){
-    console.log("triggered search");
+    // console.log("triggered search");
 
-    if(this.props.flats){
-      this.setState({
-        flats: filter(this.props.flats)
-      });
-    }
+    // if(this.props.flats){
+    //   this.setState({
+    //     flats: filter(this.props.flats)
+    //   });
+    // }
     
   }
 

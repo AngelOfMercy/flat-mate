@@ -13,7 +13,7 @@ class ResultContainer extends Component {
 	}
 
 	renderFlats(){
-		if(!this.props.flats && !this.state.flats){
+		if(!this.props.flats || !this.state.flats){
 		  return (<div>
 			Loading Flats.
 		  </div>)
