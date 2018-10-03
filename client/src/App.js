@@ -30,7 +30,7 @@ class App extends Component {
   search(filter){
     console.log("triggered search");
 
-    if(this.state.flats){
+    if(this.props.flats){
       this.setState({
         flats: filter(this.props.flats)
       });
