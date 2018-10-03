@@ -6,6 +6,9 @@ class Flat extends Component {
 
 	componentWillMount(){
 		console.log("Mounting Search Container", this.props);
+		this.setState({
+			title:""
+		})
 	}
 
 	// filterResults(data){
