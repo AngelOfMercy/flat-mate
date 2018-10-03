@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import Form from 'react-bootstrap/lib/Form';
+import Button from 'react-bootstrap/lib/Button'
 
 class Flat extends Component {
 
