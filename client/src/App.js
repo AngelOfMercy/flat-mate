@@ -27,11 +27,9 @@ class App extends Component {
       });
   }
 
-  // search(filter){
-  //   this.setState({
-  //     flats: filter(this.props.flats)
-  //   });
-  // }
+  search(filter){
+    //DO NOTHING ATM
+  }
 
   render() {
     const styles = {
@@ -61,7 +59,7 @@ class App extends Component {
           <Row style={styles.row}>
             
             <Col md={3} style={styles.left}>
-              <SearchContainer>
+              <SearchContainer search={this.search}>
               </SearchContainer>
             </Col>
 

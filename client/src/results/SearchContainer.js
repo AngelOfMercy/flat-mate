@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 
 class Flat extends Component {
 
@@ -18,6 +18,11 @@ class Flat extends Component {
 	render(){
 		return(<div>
 			Seach Form:
+			<Form>
+				<Form.Group>
+					<Form.Control type="text" placeholder="Title" value={this.props.title} onChange={console.log("Form", this.props)}/>
+				</Form.Group>
+			</Form>
 			<Button bsStyle="primary" /*onClick={this.props.search(this.filterResults)} */>
 				Search
 			</Button>
