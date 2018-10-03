@@ -10,8 +10,9 @@ class Flat extends Component {
 
 		this.handleChange = this.handleChange.bind(this);
 		this.filterResults = this.filterResults.bind(this);
+
 		this.state = {
-			value: ''
+			title: ''
 		}
 	}
 
