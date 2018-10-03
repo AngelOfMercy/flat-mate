@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Thumbnail, Row, Col, Button } from 'react-bootstrap';
+import { Thumbnail, Col, Button } from 'react-bootstrap';
 import './Flat.css';
 
 class Flat extends Component {
@@ -18,7 +18,7 @@ class Flat extends Component {
 
 	render(){
 		return(
-			<Col xs={6} md={4}>
+			<Col xs={12} sm={6} md={4}>
 				<Thumbnail href='#' alt="None" src={this.pickImage()}>
 					<h3>{this.props.Title}</h3>
 					<p>Description</p>

@@ -4,11 +4,18 @@ import { Button, FormControl } from 'react-bootstrap';
 
 class Flat extends Component {
 
+	constructor(props, context){
+		super(props, context);
+
+		this.handleChange = this.handleChange.bind(this);
+
+		this.state = {
+			value: ''
+		}
+	}
+
 	componentWillMount(){
 		console.log("Mounting Search Container", this.props);
-		this.setState({
-			title:''
-		})
 	}
 
 	filterResults(data){
@@ -32,17 +39,18 @@ class Flat extends Component {
 		return output;
 	}
 
-	handleChange(e){
-		console.log("Handle Change:", e);
-		this.setState({
-			title: e.target.value
-		})
+	handleChange(e) {
+		this.setState({ title: e.target.value });
 	}
 
 	render(){
 		return(<div>
 			<form>
-				<FormControl type="text" placeholder="Title" value={this.state.title} onChange={this.handleChange} />
+				<FormControl type="text" 
+					placeholder="Title" 
+					value={this.state.title} 
+					onChange={this.handleChange}
+				/>
 				
 				<Button bsStyle="primary" onClick={this.props.search(this.filterResults)} >
 					Search
