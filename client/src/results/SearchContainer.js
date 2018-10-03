@@ -9,7 +9,7 @@ class Flat extends Component {
 		super(props, context);
 
 		this.handleChange = this.handleChange.bind(this);
-
+		this.filterResults = this.filterResults.bind(this);
 		this.state = {
 			value: ''
 		}
@@ -23,7 +23,7 @@ class Flat extends Component {
 
 		var output = [];
 
-		if(!data)
+		if(!data || data.length === 0)
 			return output;
 
 		data.forEach(flat => {
