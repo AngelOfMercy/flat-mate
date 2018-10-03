@@ -28,7 +28,9 @@ class App extends Component {
   }
 
   search(filter){
-    //DO NOTHING ATM
+    this.setState({
+      flats: filter(this.props.flats)
+    });
     console.log("triggered search");
   }
 
