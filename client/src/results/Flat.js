@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Well, Row, Col } from 'react-bootstrap';
+import { Thumbnail, Row, Col } from 'react-bootstrap';
 import './Flat.css';
 
 class Flat extends Component {
@@ -8,18 +8,28 @@ class Flat extends Component {
 		console.log("Flat?", this.props);
 	}
 
+	pickImage(){
+		if(this.props.Images[0])
+			return this.props.Images[0];
+		else{
+			return "";
+		}
+	}
+
 	render(){
 		return(
-			<div className="FlatContainer">
-				<Row>
-					<Col xs={3}>
-						Image Goes Here
-					</Col>
-					<Col>
-							{this.props.Title}
-					</Col>
-				</Row>
-			</div>
+			<Col xs={6} md={4}>
+				<Thumbnail href='#' alt="None" src={this.pickImage()}>
+					<h3>{this.props.Title}</h3>
+					<p>Description</p>
+					<p>
+						<Button bsStyle="primary">
+							View
+						</Button>
+					</p>
+				</Thumbnail>
+			</Col>
+			
 		)
 	}
 }

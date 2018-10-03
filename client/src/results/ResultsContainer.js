@@ -27,8 +27,9 @@ class ResultContainer extends Component {
 				return (<Flat 
 				  key={flat.ListingID}
 				  pricePerRoom={flat.pricePerRoom}
-				  Title={flat.Title}>
-				</Flat>);
+				  Title={flat.Title}
+				  Images={flat.PhotoUrls}
+				  />);
 			  })}
 			</div>
 		  )
@@ -38,7 +39,10 @@ class ResultContainer extends Component {
 	render(){
 		return(
 		<Well>
-			{this.renderFlats()}
+			<Row>
+				{this.renderFlats()}
+			</Row>
+			
 		</Well>
 		)
 	}

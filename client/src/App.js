@@ -32,23 +32,6 @@ class App extends Component {
   }
 
   render() {
-    const styles = {
-      container: {
-      },
-      left: {
-        padding: 0,
-        margin: 0,
-        overflow: 'hidden'
-      },
-      right: {
-        overflowY: 'auto',
-        padding: 0,
-        paddingBottom: '50px'
-      },
-      row: {
-        marginBottom: 0
-      }
-    }
     return (
       <div className="App">
         <PageHeader className="App-header">
@@ -56,14 +39,14 @@ class App extends Component {
         </PageHeader>
 
         <Grid className="show-grid">
-          <Row style={styles.row}>
+          <Row>
             
-            <Col md={3} style={styles.left}>
+            <Col md={3}>
               <SearchContainer search={this.search}>
               </SearchContainer>
             </Col>
 
-            <Col md={9} style={styles.right}>
+            <Col md={9}>
               <ResultContainer key={this.props.flats} flats={this.props.flats} >
               </ResultContainer>
             </Col>
