@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { PageHeader, Well, Grid, Row, Col } from 'react-bootstrap';
-import logo from './logo.svg';
+import { PageHeader, Grid, Row, Col } from 'react-bootstrap';
 import './App.css';
-import { ResultContainer, SearchContainer } from './results/ResultsContainer';
+import ResultContainer from './results/ResultsContainer';
+import SearchContainer from './results/SearchContainer';
 
 class App extends Component {
 
