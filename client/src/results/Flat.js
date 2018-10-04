@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Thumbnail, Col, Button } from 'react-bootstrap';
+import { Thumbnail, Col, Row, Grid, Button, Image } from 'react-bootstrap';
 import './Flat.css';
 
 class Flat extends Component {
@@ -7,29 +7,47 @@ class Flat extends Component {
 	pickImage(){
 		if(this.props.Images[0])
 			return this.props.Images[0];
-		else{
-			return "";
+		else {
+			return "/blank.png";
 		}
 	}
 
 	render(){
 		return(
-			<Col xs={12} sm={6} md={4}>
-				<Thumbnail href='#' alt="None" src={this.pickImage()}>
-					<h3>{this.props.Title}</h3>
-					<p>Price per Room: {this.props.pricePerRoom}<br/>Bedrooms: {this.props.BedRooms}</p>
-
-					<p>
-						<Button bsStyle="primary">
-							View
-						</Button>
-						
+			<div className="FlatContainer">
+				<Row>
+						<Image className="FlatImage" src={this.pickImage()} />
+					<Col>
+						<h3>{this.props.Title}</h3>
+							<p>Price per Room: {this.props.pricePerRoom}<br/>Bedrooms: {this.props.BedRooms}</p>
+					</Col>
+				</Row>
+			</div>
+			// <Row>
+			// 	<Col xs={12}>
+			// 		<div >
+			// 			<div >
 							
-						
-					</p>
-				</Thumbnail>
-			</Col>
-			
+			// 			</div>
+			// 			<div className="FlatInfo">
+							
+			// 			</div>
+			// 		</div>
+			// 		{/* <Thumbnail alt="None" src={this.pickImage()}>
+			// 			<h3>{this.props.Title}</h3>
+			// 			<p>Price per Room: {this.props.pricePerRoom}<br/>Bedrooms: {this.props.BedRooms}</p>
+
+			// 			<p>
+			// 				<Button bsStyle="primary">
+			// 					View
+			// 				</Button>
+							
+								
+							
+			// 			</p>
+			// 		</Thumbnail> */}
+			// 	</Col>
+			// </Row>
 		)
 	}
 }

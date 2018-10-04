@@ -12,7 +12,7 @@ module.exports = {
 				StartPrice: 570,
 				BedRooms: 3,
 				"PhotoUrls": [
-					"https://cataas.com/cat?type=medium"
+					"/kitten.jpg"
 				  ]
 			},
 			{
@@ -21,7 +21,6 @@ module.exports = {
 				StartPrice: 340,
 				BedRooms: 1,
 				"PhotoUrls": [
-					"https://cataas.com/cat?type=medium"
 				  ]
 			},
 			{
