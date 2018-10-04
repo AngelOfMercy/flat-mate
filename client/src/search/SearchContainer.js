@@ -87,7 +87,7 @@ class SearchContainer extends Component {
 	}
 
 	checkKeyWords(flat, e){
-		var val = e.target.name === 'title' ? e.target.value : this.state.title;
+		var val = e.target.name === 'keyword' ? e.target.value : this.state.title;
 		const regex = new RegExp(val, "i");
 		return val === ''  || flat.Title.match(regex);
 	}
