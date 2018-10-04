@@ -1,5 +1,5 @@
 {
-  "name": "_mate",
+  "name": "flat-mate",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -14,6 +14,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "heroku-postbuild": "cd client && yarn && yarn start"
+    "heroku-postbuild": "cd client && yarn && yarn run build"
   }
 }
