@@ -3,7 +3,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import './App.css';
 import ResultContainer from './results/ResultsContainer';
 import SearchContainer from './search/SearchContainer';
-import { throws } from 'assert';
+//import { throws } from 'assert';
 
 class App extends Component {
 
