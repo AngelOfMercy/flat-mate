@@ -25,9 +25,15 @@ class ResultContainer extends Component {
 		  return (
 			<div>
 			  {this.props.flats.map(flat => {
+
+				if(!flat.pricePerRoom){
+					flat.pricePerRoom = flat.StartPrice/flat.BedRooms;
+				}
+
 				return (<Flat 
 				  key={flat.ListingID}
-				  pricePerRoom={flat.pricePerRoom}
+					pricePerRoom={flat.pricePerRoom}
+					BedRooms={flat.BedRooms}
 				  Title={flat.Title}
 				  Images={flat.PhotoUrls}
 				  />);

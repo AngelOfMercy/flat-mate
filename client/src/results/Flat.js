@@ -17,11 +17,15 @@ class Flat extends Component {
 			<Col xs={12} sm={6} md={4}>
 				<Thumbnail href='#' alt="None" src={this.pickImage()}>
 					<h3>{this.props.Title}</h3>
-					<p>Description</p>
+					<p>Price per Room: {this.props.pricePerRoom}<br/>Bedrooms: {this.props.BedRooms}</p>
+
 					<p>
 						<Button bsStyle="primary">
 							View
 						</Button>
+						
+							
+						
 					</p>
 				</Thumbnail>
 			</Col>

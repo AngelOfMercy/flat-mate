@@ -8,7 +8,7 @@ module.exports = {
 		"List": [
 			{
 				ListingID:1,
-				Title: "A",
+				Title: "Aran",
 				StartPrice: 570,
 				BedRooms: 3,
 				"PhotoUrls": [
@@ -17,7 +17,7 @@ module.exports = {
 			},
 			{
 				ListingID:2,
-				Title: "B",
+				Title: "Beetle",
 				StartPrice: 340,
 				BedRooms: 1,
 				"PhotoUrls": [
@@ -26,7 +26,7 @@ module.exports = {
 			},
 			{
 				ListingID:3,
-				Title: "C",
+				Title: "Cammel",
 				StartPrice: 1500,
 				BedRooms: 6,
 				"PhotoUrls": [
@@ -35,7 +35,7 @@ module.exports = {
 			},
 			{
 				ListingID:4,
-				Title: "D",
+				Title: "Demon",
 				StartPrice: 570,
 				BedRooms: 2,
 				"PhotoUrls": [
@@ -44,7 +44,7 @@ module.exports = {
 			},
 			{
 				ListingID:5,
-				Title: "E",
+				Title: "Earl",
 				StartPrice: 760,
 				BedRooms: 4,
 				"PhotoUrls": [

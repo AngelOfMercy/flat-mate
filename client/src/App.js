@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import './App.css';
 import ResultContainer from './results/ResultsContainer';
-import SearchContainer from './results/SearchContainer';
+import SearchContainer from './search/SearchContainer';
+import { throws } from 'assert';
 
 class App extends Component {
 
   constructor(props, context){
 		super(props, context);
 
-		this.search = this.search.bind(this);
+    this.search = this.search.bind(this);
+    //this.filterSearch = this.filterSearch.bind(this);
 
 		this.state = {
 			flats: []
@@ -37,26 +39,40 @@ class App extends Component {
   search(data){
     if(data){
       this.setState({
-        flats: this.filteredFlats(data.target.value)
+        flats: data
       })
     }
   }
 
-  filteredFlats(data){
-    console.log(data);
-    var output = [];
+  // filterSearch(filter){
+  //   if(filter){
+  //     this.setState({
+  //       flats: filter(this.props.flats)
+  //     })
+  //   }
+  //}
 
-		if(!data || data.length === 0 || data === '')
-      return this.props.flats;
+  // filteredFlats(data){
+  //   console.log(data);
+  //   var output = [];
+  //   var flats = this.props.flats;
+  //   var element_changed = data.target.name;
+  //   var value = data.target.value;
 
-		this.props.flats.forEach(flat => {
-			const regex = new RegExp(data, "i")
-			if(flat.Title.match(regex)){
-				output.push(flat);
-			}
-		});
-		return output;
-  }
+	// 	if(!value || value.length === 0 || value === '')
+  //     return this.props.flats;
+
+  //   if(element_changed === 'keyword'){
+  //     this.props.flats.forEach(flat => {
+  //       const regex = new RegExp(value, "i")
+  //       if(flat.Title.match(regex)){
+  //         output.push(flat);
+  //       }
+  //     });
+  //   }
+  
+	// 	return output;
+  // }
 
   render() {
     return (
@@ -71,7 +87,7 @@ class App extends Component {
           <Row>
             
             <Col md={3}>
-              <SearchContainer search={this.search} update={this.search}>
+              <SearchContainer search={this.search} update={this.search} flats={this.props.flats} filteredFlats={this.search}>
               </SearchContainer>
             </Col>
 
